@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 function indent() {
   c='s/^/       /'
@@ -11,6 +11,8 @@ function indent() {
 }
 
 unset GIT_DIR
+
+echo "This is JHW's hack of the heroku-buildpack-multi."
 
 for BUILDPACK in $(cat $1/.buildpacks); do
   dir=$(mktemp -t buildpackXXXXX)
